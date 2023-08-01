@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp5.MainPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" StrokeThickness="5" Stroke="Black" BackgroundColor="White">
+            <ScrollView x:Name="scrollView" Orientation="Both" Scrolled="ScrollView_OnScrolled" BackgroundColor="White">
+                <Label LineBreakMode="WordWrap" WidthRequest="1000" FontSize="100"
+                       Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                       dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+                       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+                       nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
+                       anim id est laborum."/>
+            </ScrollView>
+        </Border>
+        <Label Grid.Row="1" Text="{Binding Source={x:Reference scrollView}, Path=ScrollX, StringFormat='ScrollX: {0:F2}'}"/>
+        <Label Grid.Row="2" Text="{Binding Source={x:Reference scrollView}, Path=ScrollY, StringFormat='ScrollY: {0:F2}'}"/>
+    </Grid>
+</ContentPage>
